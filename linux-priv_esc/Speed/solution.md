@@ -194,6 +194,7 @@ ctf@speed-74bbd6d8d9-6724k:/challenge$ ls -l /tmp
 total 0
 ```
 
+This is due to the fact that by default sudo reset env to default variables that you set. So, when we modify the path variable in our session, then run `sudo -u ...`, it will run with another path, the `secure_path` that you can find in the `sudoers` file
 ### Solution
 
 
