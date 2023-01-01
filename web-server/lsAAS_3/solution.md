@@ -1,5 +1,12 @@
 # lsAAS 3
 
+## Description
+
+> Let's see if you can make through this injection too.
+
+## Hints
+
+> We all know that $ assumes the end, does it here too?
 ## Write-Up
 
 When accessing the website, we can see that, with a given folder path, it displays its content using `ls` command. We note also that the previous commands injections of `lsAAS 1` and `lsAAS 2` doesn't work and we need a new exploit to get the flag. When trying, we get the following error :
